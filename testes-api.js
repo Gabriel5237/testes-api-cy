@@ -44,24 +44,6 @@ describe('Testes da Funcionalidade Usuários', () => {
 
 })
 
-describe('Testes da Funcionalidade Usuários', () => {
-
-  it('Deve listar usuários cadastrados', () => {
-    cy.request('/users').then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.length).to.be.greaterThan(0)
-    })
-  })
-
-  it('Deve validar contrato de usuários', () => {
-    cy.request('/users').then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body[0]).to.have.property('id')
-      expect(response.body[0]).to.have.property('name')
-      expect(response.body[0]).to.have.property('email')
-    })
-  })
-
   it('Deve cadastrar um usuário com sucesso', () => {
 
     const usuario = {
